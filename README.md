@@ -108,6 +108,8 @@ On peut trouver les consignes détaillées [ici](https://github.com/sirius-schoo
 - [ ] Rendre le design (style) plus **Punk** ;
 - [ ] L'article détaillé d'un évenement ;
 - [ ] Le système des filtres/tags pour les news et évenements ;
+- [ ] Animation de bannière ;
+- [ ] Newsletter via MailShimp - plug-in ;
 - [ ] Le système de filtration pour les photos, sur la page [Galerie](#page-galerie).
 
 ## Découpe du template
@@ -239,5 +241,7 @@ Titre, image, intro, texte.
 ### Recherches / à faire rapidement
 
 - [ ] Comment génerer une page détaillée d'un article/news ;
+- [ ] MailShimp - newsletter ;
+- [ ] Embed - Spotify, YouTube, Google Map (ou autre) ;
 - [x] Faire table de matière - read me ;
 - [x] Comment faire un lien direct dans le read me.
