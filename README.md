@@ -209,12 +209,12 @@ Titre, image, intro, texte.
 | LU **14/9**  | v          | v          | v          |
 | MA **15/9**  | v          | v          | v          |
 | ME **16/9**  | v          | v          | v          |
-| JE **17/9**  | v          | v          | v          |
+| JE **17/9**  | v          | v          | x / v      |
 | VE **18/9**  | v          | v          | v          |
 | **WEEK-END** | **x**      | **x**      | **x**      |
 | LU **21/9**  | v          | v          | v          |
-| MA **22/9**  | v          | v          | v          |
-| ME **23/9**  | v          | v          | v          |
+| MA **22/9**  | v          | x / v      | v          |
+| ME **23/9**  | v          | v / x      | v          |
 | JE **24/9**  | v          | v          | v          |
 | VE **25/9**  | **CEFORA** | **CEFORA** | **CEFORA** |
 | **WEEK-END** | **x**      | **x**      | **x**      |
@@ -223,6 +223,12 @@ Titre, image, intro, texte.
 | ME **30/9**  | v          | v          | v          |
 | JE **1/10**  | v          | v          | v          |
 | VE **2/10**  | **CEFORA** | **CEFORA** | **CEFORA** |
+
+Mohamed : part à 15h40, fini le travail dans le train. + 1h à la maison tous les jours. 
+
+Yana : 22/9 - absente le matin, peut-être ; 23/9 - part à 15h. + peut travailler 3 soirées par semaine. 
+
+Ziadoon : 1re semaine - absent une matiné. + 1h à la maison deux jours par semaine. L'application sur le projet va dépendre des cours. 
 
 ### Deadlines
 
