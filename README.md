@@ -1,186 +1,264 @@
 <!-- omit in toc -->
-# Analyse fonctionnelle - CLAJ (Site multipages)
+# Projet 2 - Word Press (par Mohamed, Yana et Ziadoon)
 
-- [Infos sur le client](#infos-sur-le-client)
-  - [Buts du CLAJ](#buts-du-claj)
-  - [Public cible](#public-cible)
-  - [Buts du site](#buts-du-site)
-  - [Infos de contact](#infos-de-contact)
-- [Techniquement parlant](#techniquement-parlant)
-- [Fichiers reçus](#fichiers-reçus)
-  - [Polices](#polices)
-  - [Couleurs](#couleurs)
-- [Analyse du site](#analyse-du-site)
-  - [Globalement](#globalement)
-  - [Arborescence](#arborescence)
-- [Questions](#questions)
-  - [Recherches](#recherches)
+- [Fonctionalités demandées](#fonctionalités-demandées)
+  - [ADMINS (Super-utilisateurs)](#admins-super-utilisateurs)
+    - [Onglets WordPress](#onglets-wordpress)
+  - [Page d'accueil](#page-daccueil)
+  - [Page About](#page-about)
+  - [Page Galerie](#page-galerie)
+  - [Page E-shop (albums / produits dérivés)](#page-e-shop-albums--produits-dérivés)
+  - [Page Blog/News](#page-blognews)
+    - [Une news](#une-news)
+  - [Page Contact](#page-contact)
+  - [Bonus](#bonus)
+- [Découpe du template](#découpe-du-template)
+  - [Repititifs](#repititifs)
+    - [Header (navigation)](#header-navigation)
+    - [Footer](#footer)
+    - [Colonne Discographie](#colonne-discographie)
+    - [Article (la vignette)](#article-la-vignette)
+    - [Un item dans e-shop](#un-item-dans-e-shop)
+  - [Uniques](#uniques)
+    - [Bannière - Best news (Accueil)](#bannière---best-news-accueil)
+    - [Section "Mots du label" (Accueil)](#section-mots-du-label-accueil)
+    - [Section "Prochains évenements" (Accueil)](#section-prochains-évenements-accueil)
+    - [Section "Pourquoi nous ?" (Accueil)](#section-pourquoi-nous--accueil)
+    - [Section "Notre histoire" (About)](#section-notre-histoire-about)
+    - [Section "Galerie" (Galerie)](#section-galerie-galerie)
+- [Le travail de groupe](#le-travail-de-groupe)
+  - [Disponibilités](#disponibilités)
+  - [Deadlines](#deadlines)
+  - [Trello](#trello)
+  - [Recherches / à faire rapidement](#recherches--à-faire-rapidement)
 
-Ce projet est réalisé par :
-| Joéllie | Mohamed | Rachel | Yana |
-| ------- | ------- | ------ | ---- |
+Le client est un label de musique Liégeois portant le nom du **Wi m'fi Records**. Leur mission principale est de produire, d'éditer, de distribuer les artistes locaux. Ils mettent en lumière les albums (numériques, disques et vinyles), les news et les évenements, mais également un e-shop avec la possibilité d'obtenir les albums, ainsi que des produits dérivés.
 
-## Infos sur le client
+On peut trouver les consignes détaillées [ici](https://github.com/sirius-school/Semaine-12/blob/master/exercices/wp-groupe-A.md).
 
-**CLAJ** : *Centre Liégeois d'Aide aux Jeunes* AMO, service d'Aide en Milieu Ouvert. Le centre a déjà un [site web](http://claj.be/), ainsi qu'une [page Facebook](https://www.facebook.com/centreliegeoisdaideauxjeunes/). Le contenu de l'ancien site est à reprendre, c'est récupéré.
+## Fonctionalités demandées
 
-:bulb: Le client rencontre un problème d'accès d'[OVH](https://www.ovh.com/fr/) (un cloud, hébergement Internet).
+### ADMINS (Super-utilisateurs)
 
-### Buts du CLAJ
+* Gérer, supprimer et ajouter des [articles/news](#page-blognews) ;
+* Gérer, supprimer et ajouter des items à vendre dans le [e-shop](#page-e-shop-albums--produits-dérivés) ;
+* Gérer, supprimer et ajouter des évenements qui vont être affichés sur la [page d'accueil](#page-daccueil) ;
+* Gérer, supprimer et ajouter des albums à la colonne (section) [**Discographie**](#colonne-discographie) (pages [*About*](#page-about) et [*Blog*](#page-blognews)).
 
-Un soutien **socio-éducatif**, une aide préventive dans le milieu de vie (famille, école, quartier, ...) et les rapports avec l'environnement social, grâce aux :
+#### Onglets WordPress
 
-* aides individuelles ;
-* actions communautaires ;
-* actions collectives ;
-* actions de prévention.
+* Blog/articles/news ;
+* Evenements ;
+* Discographie ;
+* E-shop - Musiques ;
+* E-shop - Produits dérivés.
 
-### Public cible
+### Page d'accueil
 
-* Actuel et potentiel ;
-* Les **jeunes** ;
-* 0 à 18-20 ans ;
-* Les familles / proches des jeunes ;
-* Autres intervenants auprès de jeunes (écoles, services sociaux, acteurs jeunesse, acteurs de la santé, ...) ;
-* Partenaires.
+* [Header](#header-navigation) ;
+* [Bannière](#bannière---best-news) ;
+* ["Mots du label"](#section-mots-du-label) ;
+* ["Prochains évenements"](#section-prochains-évenements) (choisis par un [**Admin**](#admins-super-utilisateurs)) - [vignettes](#article-la-vignette), 4, avec slides pour plus ;
+* ["Pourquoi nous ?"](#section-pourquoi-nous-), 3 ;
+* [Footer](#footer).
 
-:bulb: Il y a 6 antennes à Liège !
+### Page About
 
-### Buts du site
+* [Header](#header-navigation) ;
+* ["Notre histoire"](#section-notre-histoire) ;
+* Section (colonne) [**Discographie**](#colonne-discographie) - créée avec le **plug-in ACF**, gerée par le [**Admin**](#admins-super-utilisateurs) ;
+* [Footer](#footer).
 
-* Regrouper des **informations** sur le CLAJ ;
-* Informer sur les services, missions, activités, projets ;
-* Servir de flux vers les pages extérieures ([Facebook](https://www.facebook.com/centreliegeoisdaideauxjeunes/)) ;
-* Afficher les **evènements** crées sur [Facebook](https://www.facebook.com/centreliegeoisdaideauxjeunes/) ;
-* **Contact** ;
-* Visibilité du public et des partenaires (réseau) actuels et potentiels.
+### Page Galerie
 
-### Infos de contact
+* [Header](#header-navigation) ;
+* ["Galerie"](#section-galerie) - Système de filtration ("Tout", "Concerts", "Groupes", "Stuff") + photos (4 par lignes) ;
+* [Footer](#footer).
 
-* **Personne de contact :** *Martin Snoeck*, éducateur ;
-* **Mail :** claj.martinsnoeck@gmail.com ;
-* **Téléphone :** 04 344 44 72.
+### Page E-shop (albums / produits dérivés)
 
-## Techniquement parlant
+* [Header](#header-navigation) ;
+* Deux sections distinctes - **Acheter la Musique** et **Produits dérivés** avec 4 [items](#un-item-dans-e-shop) chacun ;
+* [Footer](#footer).
 
-* Conserver l’**arborescence**, mais à ré-évaluer et les **structures des pages** sont à retravailler ;
-* **Responsive** - une version simplifiée pour smartphone ;
-* **Sécuriser** le site (httpS) ;
-* **Animations** flash  à jeter ou à mettre à jour (éventuellement transformer les fichiers .swf en animation) ;
-* Il faut que le client puisse **mettre à jour des contenus** ;
-* Créer des **adresses mail** *@claj.be* avec le nom de domaine ;
-* Intégrer un plugin **Google Maps** pour référencer les différents CLAJ de Liège (exit la map custom) ;
-* **Plugin event** à intégrer (lien aux réseaux sociaux).
+:bulb: Le systeme d'e-shop - [**WooCommerce**](https://woocommerce.com/) avec le payement via bancontact/mastercard ou via virement bancaire (à voir selon les **plugins** mis à disposition).
 
-:bulb: Il faut respecter la **charte graphique** (cf. flyers et dépliants). Le **logo** existant est à garder (pas de changement possible).
+### Page Blog/News
 
-## Fichiers reçus
+* [Header](#header-navigation) ;
+* Les news/articles du label sous forme de [vignettes](#article-la-vignette) - 5, date, image, titre, extrait de l'article + **button** redirigeant vers l'article détaillé ;
+* Section (colonne) [**Discographie**](#colonne-discographie) - créée avec le **plug-in ACF**, gerée par le [**Admin**](#admins-super-utilisateurs) ;
+* [Footer](#footer).
 
-* **Logo** (blanc/vert, sur fonds blanc/vert/rose avec et sans baseline) ;
+#### Une news
 
-![Logo](screens/logo.JPG)
+* [Header](#header-navigation) ;
+* L'article détaillé de la news (image + date + titre + texte) ;
+* [Footer](#footer).
 
-* Fichier Photoshop avec le **fond** pour Header ;
+### Page Contact
 
-![Fond](screens/fond.JPG)
+* [Header](#header-navigation) ;
+* Formulaire (inputs de nom, e-mail, website/objet/thème et texte) de contact - système de messagerie (avec un **plug-in au choix**) - pour artistes qui veulent contacter le label ;
+* Google Map ;
+* [Footer](#footer).
 
-* Affiche (ai, pdf) ;
+### Bonus
 
-![Affiche](screens/affiche.JPG)
+- [ ] Intégration des **vidéos** clips dans les articles ;
+- [ ] Diffuser en bas les produits dérivés d'un album précis, lorsque nous sommes sur la page de cet album ;
+- [ ] Rendre le design (style) plus **Punk** ;
+- [ ] L'article détaillé d'un évenement/album ;
+- [ ] Le système des filtres/tags pour les news et évenements ;
+- [ ] Animation de bannière ;
+- [ ] Newsletter via MailShimp - plug-in ;
+- [ ] Flèches de scroll - events, articles, etc. ;
+- [ ] Rendre les albums dans la [Discographie](#colonne-discographie) clicables pour aller sur une page extérieure et écouter l'album ;
+- [ ] Le système de filtration pour les photos, sur la page [Galerie](#page-galerie).
 
-* Dépliant (ai, pdf) ;
+## Découpe du template
 
-![depliant](screens/depliant1.JPG)
-![depliant](screens/depliant2.JPG)
+### Repititifs
 
-* En-tête et bas de page (ai, pdf) ;
+#### Header (navigation)
 
-![entete](screens/entete.JPG)
-![entete](screens/basdepage.JPG)
+* Logo et slogan ;
+* Lien [Accueil](#page-daccueil) ;
+* Lien [Galerie](#page-galerie) ;
+* Lien [Shop](#page-e-shop-albums--produits-dérivés) ;
+* Lien [Blog](#page-blognews) ;
+* Lien [Contact](#page-contact).
 
-* Flyer (ai, pdf) ;
+![Header](images/header.JPG)
 
-![Flyer](screens/flyer.JPG)
+#### Footer
 
-* Plan / map (ai, pdf, jpg, tif) ;
+* Logo ;
+* Adresse ;
+* Mail ;
+* S'inscrire à la newsletter avec un input pour le mail et un button submit ; (bonus)
+* 4 pictos/liens vers les réseaux sociaux ;
+* Copyright.
 
-![Map](screens/map.JPG)
+![Footer](images/footer.JPG)
 
-* Dossier du site :
-  * pages html,
-  * css,
-  * javascript,
-  * dossiers de sécurité hts,
-  * google analytics,
-  * icons (gif),
-  * images (jpg, png),
-  * animations (gif, swf),
-  * docs pour jeunes (dossier *img* - jpg, pdf, gif).
+#### Colonne Discographie
 
-### Polices
+5 vignettes avec Image, titre, nom d'artiste (!), année, le nombre des morceaux.
 
-* Myriad Roman / Bold ;
-* Kristen ITC Regilar ;
-* Century Gothic Bold ;
-* Maiandra GD Regular ;
-* Antiqua Book.
+Chaque album est clicable et envoie vers une page extérieure (Spotify ?) pour écouter l'album. (bonus)
 
-### Couleurs
+![Discographie](images/discographie.JPG)
 
-:bulb: Les noms en italique sont ceux de logo.
+#### Article (la vignette)
 
-* ![Jaune](screens/colors/j.JPG) **Jaune**, #FAE920, rgb(250, 233, 32) ;
-* ![Jaune-orange](screens/colors/j-o.JPG) **Jaune-orange**, #F5C509, rgb(245, 197, 9) ;
-* ![Vert](screens/colors/v.JPG) **Vert**, #2D692D, rgb(45, 105, 45) ;
-* Dégradé de ![Vert-blue](screens/colors/v-b.JPG) **Vert-blue**, #279037, rgb(39, 144, 55) vers ![Vert-jaune](screens/colors/v-j.JPG) **Vert-jaune**, #9CC429, rgb(156, 196, 41) ;
-![Dégradé](screens/colors/degrade.JPG)
-* ![Vert-jaune du logo](screens/colors/v-j-logo.JPG) *Vert-jaune*, #4B9228, rgb(75, 146, 40) ;
-* ![Blanc-blue](screens/colors/b-b.JPG) **Blanc-blue**, #CAE8F3, rgb(202, 232, 243) ;
-* ![Blue](screens/colors/b.JPG) **Blue**, #2084C6, rgb(32, 132, 198) ;
-* ![Rose](screens/colors/rose.JPG) **Rose**, #EA5599, rgb(234, 85, 153) ;
-* ![Mauve](screens/colors/m.JPG) *Mauve*, #C82280, rgb(200, 34, 128) ;
-* ![Rouge](screens/colors/rouge.JPG) **Rouge**, #E34522, rgb(227, 69, 34).
+* Date ;
+* Image ;
+* Titre ;
+* Extrait de l'article ;
+* Button Lire plus.
 
-## Analyse du site
+![Article](images/article.JPG)
 
-### Globalement
+#### Un item dans e-shop 
 
-* Header = Logo + baseline et illustration avec un fond incorporé (cf. fichier Photoshop) ;
+* Nom ;
+* Année ;
+* Prix ;
+* Button **Acheter** ;
+* Button **Écouter** pour écouter l'album ou **Regarder** pour afficher une image du produit dérivé ; (bonus)
+* Section de Partage - 4 pictos/liens vers les réseaux sociaux, pour partager l'achat.
 
-![Header](screens/header.JPG)
+![Item](images/item.JPG)
 
-* Fond en dégradé, de vert-jaune à vert-blue ;
-* Animations dessinées très lentes ;
-* Illustrations ;
-* Logos des partenaires.
+### Uniques
 
-:bulb: Pas des liens claires vers les Facebook !
+#### Bannière - Best news (Accueil)
 
-### Arborescence
+3 slides avec Titre, sous-titre (lieu, date ?), courte description, button "Lire plus".
 
-1. *Qui sommes-nous ?* (Description, adresse)
-2. *Pour qui, pour quoi ?*
-   1. Qui : 5 boutons qui déclanchent des pop-ups ;
-   ![Pour qui avec pop-up](screens/qui.JPG)
-   2. Quoi : 28 paragraphes qui s'agrandissent au survole.
-   ![Pour quoi](screens/quoi.JPG)
-3. *Le CLAJ près de chez toi !* (Carte interactive)
-4. *Quoi d'neuf ?*
-   1. Agenda - renvoie vers une page des évènements ;
-   2. Outils pédagogiques - renvoie vers une page avec des pdf et leur déscription.
-5. *Nos amis...* (Partenaires)
-6. *Nous contacter* (Toutes les adresses avec jolies illus)
+![Bannière](images/banniere.JPG)
 
-![L'arborescense](screens/nav.JPG)
+#### Section "Mots du label" (Accueil)
 
-## Questions
+2 slides avec Citation, author, sa fonction.
 
-* Google Maps est payant - ok pour un équivalent ?
-* Faut-il un calendrier ?
-* Quel CMS / Languages / Framework / ... :interrobang: (React, Node.js, Drupal, CodeIgniter, Symfony, Magento, Strapi, Laravel, ...)
-* Faut-il une newsletter ?
+![Mots du label](images/motsLabel.JPG)
 
-### Recherches
+#### Section "Prochains évenements" (Accueil)
 
-- [ ] FB developper doc - comment récuperer les events dans l'API ;
-- [ ] Bcrypt mot de passe.
+4 évenements ([vigniettes](#article-la-vignette)) avec Date, titre et courte description.
+
+![Prochains évenements](images/events.JPG)
+
+#### Section "Pourquoi nous ?" (Accueil)
+
+3 raisons avec Image, nom, courte description.
+
+![Pourquoi nous ?](images/whyUs.JPG)
+
+#### Section "Notre histoire" (About)
+
+Titre, image, intro, texte.
+
+![Notre histoire](images/histoire.JPG)
+
+#### Section "Galerie" (Galerie)
+
+* Système de filtration - "Tout", "Concerts", "Groupes", "Stuff" - bonus ;
+* Les photos, 4 par lignes.
+
+![Filtres](images/filtres.JPG)
+![Galerie](images/galerie.JPG)
+
+## Le travail de groupe
+
+### Disponibilités
+
+| Dates        | Mohamed    | Yana       | Ziadoon    |
+| ------------ | ---------- | ---------- | ---------- |
+| LU **14/9**  | v          | v          | v          |
+| MA **15/9**  | v          | v          | v          |
+| ME **16/9**  | v          | v          | v          |
+| JE **17/9**  | v          | v          | **x** / v  |
+| VE **18/9**  | v          | v          | v          |
+| **WEEK-END** | **x**      | **x**      | **x**      |
+| LU **21/9**  | v          | v          | v          |
+| MA **22/9**  | v          | **x** / v  | v          |
+| ME **23/9**  | v          | v / **x**  | v          |
+| JE **24/9**  | v          | v          | v          |
+| VE **25/9**  | **CEFORA** | **CEFORA** | **CEFORA** |
+| **WEEK-END** | **x**      | **x**      | **x**      |
+| LU **28/9**  | v          | v          | v          |
+| MA **29/9**  | v          | v          | v          |
+| ME **30/9**  | v          | v          | v          |
+| JE **1/10**  | v          | v          | v          |
+| VE **2/10**  | **CEFORA** | **CEFORA** | **CEFORA** |
+
+**Mohamed** : part à 15h40, fini le travail dans le train. + 1h à la maison tous les jours.
+
+**Yana** : 22/9 - absente le matin, peut-être ; 23/9 - part à 15h. + peut travailler 3 soirées par semaine.
+
+**Ziadoon** : 1re semaine - absent une matiné. + 1h à la maison deux jours par semaine. L'application sur le projet va dépendre des cours.
+
+### Deadlines
+
+**18/9** Lire le pdf, créer un fichier avec des questions, faire réunion commune penchant sur les questions ;
+
+**30/9** Mise en commun du travail de chaque personne ;
+
+**1/10** Correction, si nécessaire, le rendu du projet.
+
+:bulb: **Stand up meeting chaque matin**
+
+### Trello
+
+[Voici le tableau](https://trello.com/b/Y83XnPX1/projet-2-wordpress) de Trello.
+
+### Recherches / à faire rapidement
+
+- [ ] Comment génerer une page détaillée d'un article/news ;
+- [ ] MailShimp - newsletter ;
+- [ ] Embed - Spotify, YouTube, Google Map (ou autre) ;
+- [x] Faire table de matière - read me ;
+- [x] Comment faire un lien direct dans le read me.
